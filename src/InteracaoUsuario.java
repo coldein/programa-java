@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class InteracaoUsuario {
@@ -7,6 +8,7 @@ public class InteracaoUsuario {
         double altura = 0, peso = 0;
 
         String nome = "", documento = "", estadoCivil = "";
+        String[] estadoCivilPermitido = {"solteiro", "casado", "divorciado", "viúvo"};
 
         Scanner input = new Scanner(System.in);
 
@@ -15,29 +17,31 @@ public class InteracaoUsuario {
 
         do {
             System.out.println("Digite seu nome completo: ");
-            nome = input.nextLine();
-            if (nome.trim().isEmpty()) {
+            nome = input.nextLine().trim();
+            if (nome.isEmpty()) {
                 System.out.println("Seu nome não pode estar vazio!\n");
             }
-        } while (nome.trim().isEmpty());
+        } while (nome.isEmpty());
 
         do {
             System.out.println("Digite seu CPF: ");
-            documento = input.nextLine();
-            if (documento.trim().isEmpty()) {
+            documento = input.nextLine().trim();
+            if (documento.isEmpty()) {
                 System.out.println("Seu CPF não pode estar vazio!");
             }
 
-        } while (documento.trim().isEmpty());
+        } while (documento.isEmpty());
 
         do {
-            System.out.println("Digite seu estado civil: ");
-            estadoCivil = input.nextLine();
-            if (estadoCivil.trim().isEmpty()) {
-                System.out.println("Seu estado civil estar vazio!\n");
+            System.out.println("Digite seu estado civil (solteiro, casado, divorciado, viúvo): ");
+            estadoCivil = input.nextLine().trim().toLowerCase();
+            if (estadoCivil.isEmpty()) {
+                System.out.println("Seu estado civil estar vazio!");
+            } else if (!Arrays.asList(estadoCivilPermitido).contains(estadoCivil)) {
+                estadoCivil = "";
+                System.out.println("Estado civil inválido!");
             }
-
-        } while (estadoCivil.trim().isEmpty());
+        } while (estadoCivil.isEmpty());
 
         do {
             System.out.println("Digite sua idade: ");
