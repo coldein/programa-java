@@ -8,7 +8,7 @@ public class InteracaoUsuario {
         double altura = 0, peso = 0;
 
         String nome = "", documento = "", estadoCivil = "";
-        String[] estadoCivilPermitido = {"solteiro", "casado", "divorciado", "viúvo"};
+        String[] estadoCivilPermitido = {"solteiro", "casado", "divorciado", "viuvo"};
 
         Scanner input = new Scanner(System.in);
 
@@ -33,7 +33,7 @@ public class InteracaoUsuario {
         } while (documento.isEmpty());
 
         do {
-            System.out.println("Digite seu estado civil (solteiro, casado, divorciado, viúvo): ");
+            System.out.println("Digite seu estado civil (solteiro, casado, divorciado, viuvo): ");
             estadoCivil = input.nextLine().trim().toLowerCase();
             if (estadoCivil.isEmpty()) {
                 System.out.println("Seu estado civil estar vazio!");
@@ -81,5 +81,11 @@ public class InteracaoUsuario {
         } while (altura <= 0);
 
         input.close();
+
+        System.out.println("Processando...\nAqui estão seu dados:\n");
+
+        System.out.println("Nome: " + nome+ " | CPF: " + documento);
+        System.out.println("Idade: " + idade + " anos" +" | Estado Civil: " + estadoCivil);
+        System.out.println("Peso: " + peso + " Kg" + " | Altura: " + altura + " m");
     }
 }
