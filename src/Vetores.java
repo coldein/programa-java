@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Vetores {
     static int[] vetor = new int[0];
+    static int[] vetorInteiros = new int[]{5, 44, 3, 99, 10, 45};
     static String[] vetorString = new String[0];
 
     public static void main(String[] args) {
@@ -78,5 +79,14 @@ public class Vetores {
         posicoes += " ]";
 
         System.out.println("Valores do vetor: " + posicoes);
+    }
+
+    public static void bubbleSort() {
+        // ordenação
+        for (int i = 0; i < vetorString.length; i++) {
+            for (int j = i; j < vetorString.length; j++) {
+
+            }
+        }
     }
 }
