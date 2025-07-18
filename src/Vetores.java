@@ -3,17 +3,18 @@ import java.util.Scanner;
 public class Vetores {
     static int[] vetor = new int[0];
     static int[] vetorInteiros = new int[]{5, 44, 3, 99, 10, 45};
-    static String[] vetorString = new String[0];
+    static String[] vetorString = new String[]{"carro", "moto", "aviao"};
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Tamanho do vetor:");
-        int tamanhoVetor = input.nextInt();
-        //vetor = new int[tamanhoVetor];
-        vetorString = new String[tamanhoVetor];
-
-        Vetores.printString(input, tamanhoVetor);
+        Vetores.bubbleSort();
+//        Scanner input = new Scanner(System.in);
+//
+//        System.out.println("Tamanho do vetor:");
+//        int tamanhoVetor = input.nextInt();
+//        //vetor = new int[tamanhoVetor];
+//        vetorString = new String[tamanhoVetor];
+//
+//        Vetores.printString(input, tamanhoVetor);
     }
 
     public static void printInt(Scanner input, int tamanhoVetor) {
@@ -83,10 +84,36 @@ public class Vetores {
 
     public static void bubbleSort() {
         // ordenação
+        //{5, 44, 3, 99, 10, 45}
+//        for (int i = 0; i < vetorInteiros.length; i++) {
+//            for (int j = i; j < vetorInteiros.length; j++) {
+//                int temp = vetorInteiros[i];
+//                if(vetorInteiros[i] < vetorInteiros[j]){
+//                    vetorInteiros[i] = vetorInteiros[j];
+//                    vetorInteiros[j] = temp;
+//                }
+//            }
+//        }
+//
+//        for (int i = 0; i < vetorInteiros.length; i++) {
+//            System.out.println(vetorInteiros[i]);
+//        }
+
+
         for (int i = 0; i < vetorString.length; i++) {
             for (int j = i; j < vetorString.length; j++) {
-
+                String temp = vetorString[i];
+                if(vetorString[i].compareTo(vetorString[j]) > 0) {
+                    vetorString[i] = vetorString[j];
+                    vetorString[j] = temp;
+                }
             }
         }
+
+        for (int i = 0; i < vetorString.length; i++) {
+            System.out.println(vetorString[i]);
+        }
+
+
     }
 }
